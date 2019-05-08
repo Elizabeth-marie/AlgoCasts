@@ -9,19 +9,13 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  let sorted1 = stringA.replace(/[^\w]/g, '')
-    .toLowerCase()
-    .split('')
-    .sort()
-    .join('')
 
-  let sorted2 = stringB.replace(/[^\w]/g, '')
-    .toLowerCase()
-    .split('')
-    .sort()
-    .join('')
+  return sorted(stringA) === sorted(stringB)
 
-  return sorted1 === sorted2
+}
+
+const sorted = str => {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
 }
 
 module.exports = anagrams;
