@@ -93,10 +93,6 @@ class LinkedList {
   }
 
   getAt(index) {
-    if (!this.head) {
-      return null
-    }
-
     let node = this.head
     let counter = 0
 
@@ -107,6 +103,7 @@ class LinkedList {
       counter++
       node = node.next
     }
+    return null
   }
 }
 
