@@ -134,6 +134,10 @@ class LinkedList {
       this.head = new Node(data, this.head)
       return
     }
+
+    const previous = this.getAt(index - 1) || this.getLast()
+    const node = new Node(data, previous.next)
+    previous.next = node
   }
 
 }
