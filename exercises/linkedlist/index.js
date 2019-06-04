@@ -105,6 +105,33 @@ class LinkedList {
     }
     return null
   }
+
+  removeAt(index) {
+    if (!this.head) {
+      return
+    }
+    if (index === 0) {
+      this.head = this.head.next
+      return
+    }
+
+    let previous = this.getAt(index - 1)
+
+    if (!previous || !previous.next) {
+      return
+    }
+    previous.next = previous.next.next
+  }
+
+  insertAt(data, index) {
+
+    let node = this.head
+
+    if (!node) {
+      this.head = new Node(data)
+    }
+  }
+
 }
 
 
